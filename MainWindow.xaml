@@ -1,0 +1,29 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemoExam"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="DemoExam.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="#FFC597FF">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Menu Grid.ColumnSpan="2">
+            <MenuItem Header="Справочники">
+                <!--<MenuItem Header="Продажи" Click="OpenCalculation"/>
+                <MenuItem Header="Товары" Click="OpenProducts"/>
+                <MenuItem Header="Контрагенты" Click="OpenContactPerson"/>-->
+            </MenuItem>
+        </Menu>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="83,326,0,0" Grid.Row="1" VerticalAlignment="Top" Height="43" Width="140" Click="Button_Click"/>
+        <Button x:Name="Shipments" Content="Button" HorizontalAlignment="Left" Margin="83,199,0,0" Grid.Row="1" VerticalAlignment="Top" Height="45" Width="140" Click="Shipments_Click"/>
+    </Grid>
+</Window>
