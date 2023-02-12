@@ -34,10 +34,11 @@ namespace DemoExam
             textBoxID.Text = this.model.ID.ToString();
             employee = DBModel.SelectEmployeeByID(this.model.IDManager);
             contactPerson = DBModel.SelectContactPersonByID(employee.IDContact);
-            textBoxManager.Text = contactPerson.LastName + " " + contactPerson.FirstName.Substring(0, 1)+"." + contactPerson.Patronymic.Substring(0, 1)+".";
+            textBoxManager.Text = contactPerson.LastName + " " + (contactPerson.FirstName != null ? contactPerson.FirstName.Substring(0, 1) : "") + "." + (contactPerson.Patronymic != null ? contactPerson.Patronymic.Substring(0, 1) : "" )+ ".";
             dateTimePickerShipmentDateTime.Value = this.model.ShipmentDate;
             shipmentContent = DBModel.SelectShipmentContentByShipmentID(this.model.ID);
-            
+            DataGridPositions.ItemsSource = shipmentContent;
+
             
         }
 

@@ -14,5 +14,14 @@ namespace DemoExam.Models
         [Column("IDContact")]
         public int IDContact { get; set; }
 
+        public ContactPerson Contact
+        {
+            get
+            {
+                return DBModel.SelectContactPersonByID(IDContact);
+            }
+
+        }
+
     }
 }

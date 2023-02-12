@@ -11,6 +11,7 @@ namespace DemoExam.Models
     [Table("состав отгрузок")]
     public class ShipmentContent : Base
     {
+        
 
 
         [Column("IDShipment")]
@@ -18,6 +19,16 @@ namespace DemoExam.Models
 
         [Column("IDProduct")]
         public int IDProduct { get; set; }
+
+        public Product Product
+        {
+            get
+            {
+                return DBModel.SelectProductByID(IDProduct);
+            }
+
+        }
+        
 
         [Column("Quantity")]
         public int Quantity { get; set; }

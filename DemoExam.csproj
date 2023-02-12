@@ -164,7 +164,6 @@
     <Compile Include="Models\Purchases.cs" />
     <Compile Include="Models\Sales.cs" />
     <Compile Include="Models\Sellers.cs" />
-    <Compile Include="Models\ShipmentCompositions.cs" />
     <Compile Include="Models\Shipment.cs" />
     <Compile Include="Models\Warehouses.cs" />
     <Compile Include="ProductsView.xaml.cs">

@@ -142,6 +142,29 @@ namespace DemoExam
             return contactPerson;
         }
 
+        public static Product SelectProductByID(int ID)
+        {
+            Product Product = new Product();
+            string query = "select * from `товары` where ID=" + ID;
+            var mySqlDB = MySqlDB.GetDB();
+            if (mySqlDB.OpenConnection())
+            {
+                using (MySqlCommand mc = new MySqlCommand(query, mySqlDB.sqlConnection))
+                using (MySqlDataReader dr = mc.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        Product.ID = dr.GetInt32("ID");
+                        Product.ProductName = dr.GetString("ProductName");
+                        Product.Description = dr.GetString("Description");
+                        Product.Category = dr.GetString("Category");
+                    }
+                }
+                mySqlDB.CloseConnection();
+            }
+            return Product;
+        }
+
         public static void Update<T>(T value) where T : Base
         {
             string table;

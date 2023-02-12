@@ -18,6 +18,15 @@ namespace DemoExam.Models
 
             [Column("IDManager")]
             public int IDManager { get; set; }
+
+        public Employee Manager
+        {
+            get
+            {
+                return DBModel.SelectEmployeeByID(IDManager);
+            }
+
         }
+    }
     
 }

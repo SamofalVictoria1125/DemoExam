@@ -18,8 +18,20 @@
         <xctk:DateTimePicker x:Name="dateTimePickerShipmentDateTime" HorizontalAlignment="Left" Margin="108,0,0,0" VerticalAlignment="Center" Height="38" Width="109"/>
         <TextBox x:Name="textBoxManager" HorizontalAlignment="Left" Margin="108,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
         <Label x:Name="label_ID_Copy" Content="Manager" HorizontalAlignment="Left" Margin="108,131,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.451,-0.17"/>
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="108,258,64,35"/>
-
+        <DataGrid IsReadOnly="True" MaxWidth="800" Width="551" HorizontalAlignment="Left" AutoGenerateColumns="False"  x:Name="DataGridPositions"  Margin="108,261,0,41">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Имя товара"  
+                             Binding="{Binding Product.ProductName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Количество"  
+                             Binding="{Binding Quantity}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Объем" 
+                             Binding="{Binding Volume}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Вес" 
+                             Binding="{Binding Weight}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Сумма" Width="*"
+                             Binding="{Binding Sum}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
 
     </Grid>
 </Window>
